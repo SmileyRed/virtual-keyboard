@@ -37,7 +37,7 @@ export function addKeyboardWrapper() {
         <div class="keyboard__key" data-engLowCode="91" data-shiftCode="123" data-ruCode="245" data-ruCapsCode="213">[</div>
         <div class="keyboard__key" data-engLowCode="93" data-shiftCode="125" data-ruCode="250" data-ruCapsCode="218">]</div>
         <div class="keyboard__key" data-engLowCode="92" data-shiftCode="124">\\</div>
-        <div class="keyboard__key del" data-engCode="46">del</div>
+        <div class="keyboard__fn del">del</div>
       </div>
       <div class="keyboard__line">
         <div class="keyboard__fn capsock" data-engCode="20">cpslck</div>
