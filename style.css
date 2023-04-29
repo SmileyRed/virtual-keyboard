@@ -21,7 +21,7 @@
   display: block;
   clear: both;
 }
-.keyboard-container .keyboard__line .keyboard__key {
+.keyboard-container .keyboard__line .keyboard__fn, .keyboard-container .keyboard__line .keyboard__key {
   float: left;
   width: 40px;
   height: 40px;
@@ -31,19 +31,14 @@
   padding: 4px;
   text-align: center;
   line-height: 40px;
-  text-transform: uppercase;
 }
-.keyboard-container .keyboard__line .keyboard__key:hover {
+.keyboard-container .keyboard__line .keyboard__fn:hover, .keyboard-container .keyboard__line .keyboard__key:hover {
   color: white;
   background-color: orange;
   cursor: pointer;
 }
-.keyboard-container .keyboard__line .keyboard__key:active {
+.keyboard-container .keyboard__line .keyboard__fn:active, .keyboard-container .keyboard__line .keyboard__key:active {
   background-color: black;
-}
-.keyboard-container .keyboard__line .keyboard__key-letter {
-  text-transform: lowercase;
-  font-size: 14px;
 }
 .keyboard-container .keyboard__line .backspace {
   width: 95px;
