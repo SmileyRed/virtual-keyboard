@@ -19,7 +19,8 @@
       display: block;
       clear: both;
     }
-    .keyboard__key {
+    & .keyboard__fn,
+    & .keyboard__key {
       float: left;
       width: 40px;
       height: 40px;
@@ -29,7 +30,6 @@
       padding: 4px;
       text-align: center;
       line-height: 40px;
-      text-transform: uppercase;
       &:hover {
         color: white;
         background-color: orange;
@@ -38,10 +38,6 @@
       &:active {
         background-color: black;
       }
-    }
-    .keyboard__key-letter{
-      text-transform: lowercase;
-      font-size: 14px;
     }
     .backspace {
       width: 95px;
