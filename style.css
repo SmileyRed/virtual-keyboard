@@ -1,0 +1,61 @@
+.keyboard__textarea-wrapper {
+  max-width: 839px;
+  margin: auto;
+}
+.keyboard__textarea-wrapper .keyboard__textarea {
+  width: 100%;
+}
+
+.keyboard-container {
+  border: 1px solid slategray;
+  padding: 5px;
+  border-radius: 4px;
+  max-width: 840px;
+  margin: auto;
+}
+.keyboard-container .keyboard__line {
+  display: flex;
+}
+.keyboard-container .keyboard__line:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.keyboard-container .keyboard__line .keyboard__fn, .keyboard-container .keyboard__line .keyboard__key {
+  float: left;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 3px;
+  padding: 4px;
+  text-align: center;
+  line-height: 40px;
+}
+.keyboard-container .keyboard__line .keyboard__fn:hover, .keyboard-container .keyboard__line .keyboard__key:hover {
+  color: white;
+  background-color: orange;
+  cursor: pointer;
+}
+.keyboard-container .keyboard__line .keyboard__fn:active, .keyboard-container .keyboard__line .keyboard__key:active {
+  background-color: black;
+}
+.keyboard-container .keyboard__line .backspace {
+  width: 95px;
+}
+.keyboard-container .keyboard__line .enter {
+  width: 150px;
+}
+.keyboard-container .keyboard__line .shift {
+  width: 95px;
+}
+.keyboard-container .keyboard__line .arrow {
+  width: 40px;
+  height: 40px;
+}
+.keyboard-container .keyboard__line .win {
+  margin-top: 4px;
+}
+.keyboard-container .keyboard__line .space {
+  width: 375px;
+}/*# sourceMappingURL=style.css.map */

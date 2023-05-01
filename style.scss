@@ -1,0 +1,63 @@
+.keyboard__textarea-wrapper {
+  max-width: 839px;
+  margin: auto;
+  .keyboard__textarea{
+    width: 100%;
+  }
+}
+
+.keyboard-container {
+  border: 1px solid slategray;
+  padding: 5px;
+  border-radius: 4px;
+  max-width: 840px;
+  margin: auto;
+  .keyboard__line {
+    display: flex;
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    & .keyboard__fn,
+    & .keyboard__key {
+      float: left;
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      border-radius: 3px;
+      margin: 3px;
+      padding: 4px;
+      text-align: center;
+      line-height: 40px;
+      &:hover {
+        color: white;
+        background-color: orange;
+        cursor: pointer;
+      }
+      &:active {
+        background-color: black;
+      }
+    }
+    .backspace {
+      width: 95px;
+    }
+    .enter {
+      width: 150px;
+    }
+    .shift {
+      width: 95px;
+    }
+    .arrow {
+      width: 40px;
+      height: 40px;
+    }
+    .win {
+      margin-top: 4px;
+    }
+    
+    .space {
+      width: 375px;
+    }
+  }
+}
