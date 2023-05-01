@@ -1,5 +1,5 @@
 export function addKeyboardWrapper() {
-  document.body.insertAdjacentHTML("afterbegin",
+  document.body.insertAdjacentHTML('afterbegin',
     `
     <div class="keyboard-wrapper">
     <div class="keyboard__textarea-wrapper">

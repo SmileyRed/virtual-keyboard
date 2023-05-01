@@ -14,7 +14,7 @@ export function initClickListeners() {
 
       textarea.value = strBeforeCursor + String.fromCharCode(dataCode) + strAfterCursor;
       textarea.selectionStart = cursorPosition + 1;
-    })
+    });
   };
 
 
@@ -33,7 +33,7 @@ export function initClickListeners() {
 
     textarea.value = strBeforeCursor + strAfterCursor;
     textarea.selectionStart = cursorPosition - 1;
-  })
+  });
 
   keyDel.addEventListener('click', () => {
     const cursorPosition = textarea.selectionStart;
@@ -43,6 +43,5 @@ export function initClickListeners() {
 
     textarea.value = strBeforeCursor + strAfterCursor;
     textarea.selectionStart = cursorPosition;
-  })
-
-}
+  });
+};
