@@ -35,4 +35,14 @@ export function initClickListeners() {
     textarea.selectionStart = cursorPosition - 1;
   })
 
+  keyDel.addEventListener('click', () => {
+    const cursorPosition = textarea.selectionStart;
+
+    const strBeforeCursor = textarea.value.slice(0, cursorPosition);
+    const strAfterCursor = textarea.value.slice(cursorPosition + 1);
+
+    textarea.value = strBeforeCursor + strAfterCursor;
+    textarea.selectionStart = cursorPosition;
+  })
+
 }
