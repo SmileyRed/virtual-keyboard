@@ -12,6 +12,7 @@
   border-radius: 4px;
   max-width: 840px;
   margin: auto;
+  text-align: center;
 }
 .keyboard-container .keyboard__line {
   display: flex;
@@ -58,4 +59,9 @@
 }
 .keyboard-container .keyboard__line .space {
   width: 375px;
+}
+
+.capsock-active, .shift-active {
+  background-color: black;
+  color: orange;
 }/*# sourceMappingURL=style.css.map */

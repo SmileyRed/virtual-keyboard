@@ -12,6 +12,7 @@
   border-radius: 4px;
   max-width: 840px;
   margin: auto;
+  text-align: center;
   .keyboard__line {
     display: flex;
     &:after {
@@ -60,4 +61,8 @@
       width: 375px;
     }
   }
+}
+.capsock-active, .shift-active {
+  background-color: black;
+  color: orange;
 }
