@@ -51,8 +51,9 @@ export function initClickListeners() {
     const capsock = document.querySelector('.capsock')
     capsock.classList.toggle('capsock-active')
     isCapsLock = !isCapsLock;
+    const codeAttribute = getCurrentCodeType();
     for (let i = 0; i < keyboardKeys.length; i++) {
-      const dataCode = keyboardKeys[i].dataset[isCapsLock ? 'engcapscode' : 'englowcode'];
+      const dataCode = keyboardKeys[i].dataset[codeAttribute];
       if (dataCode && !keyboardKeys[i].dataset.nonchanged) {
         keyboardKeys[i].innerHTML = String.fromCharCode(dataCode);
       }
@@ -69,8 +70,9 @@ export function initClickListeners() {
         shift[k].classList.toggle('shift-active')
       }
       isShift = !isShift;
+      const codeAttribute = getCurrentCodeType();
       for (let i = 0; i < keyboardKeys.length; i++) {
-        const dataCode = keyboardKeys[i].dataset[isShift ? 'shiftcode' : 'englowcode'];
+        const dataCode = keyboardKeys[i].dataset[codeAttribute];
         if (dataCode && !keyboardKeys[i].dataset.nonchanged) {
           keyboardKeys[i].innerHTML = String.fromCharCode(dataCode);
         }
@@ -93,8 +95,9 @@ export function initClickListeners() {
     pressed.clear();
 
     isEng = !isEng
+    const codeAttribute = getCurrentCodeType();
     for (let i = 0; i < keyboardKeys.length; i++) {
-      const dataCode = keyboardKeys[i].dataset[isEng ? 'englowcode' : 'rulowcode'];
+      const dataCode = keyboardKeys[i].dataset[codeAttribute];
       if (dataCode && !keyboardKeys[i].dataset.nonchanged) {
         keyboardKeys[i].innerHTML = String.fromCharCode(dataCode);
       }
@@ -105,4 +108,36 @@ export function initClickListeners() {
     pressed.delete(event.code);
   });
 
+  function getCurrentCodeType() {
+    if (isCapsLock && !isShift && isEng) {
+      return 'engcapscode'
+    }
+
+    if (!isCapsLock && !isShift && isEng) {
+      return 'englowcode'
+    }
+
+    if (!isCapsLock && isShift && isEng) {
+      return 'shiftcode'
+    }
+
+    if (!isCapsLock && !isShift && !isEng) {
+      return 'rulowcode'
+    }
+
+    if (isCapsLock && !isShift && !isEng) {
+      return 'rucapscode'
+    }
+
+    if (!isCapsLock && isShift && !isEng) {
+      return 'rusiftcode'
+    }
+
+    if (isCapsLock && isShift && isEng) {
+      return 'englowcode'
+    }
+    if (isCapsLock && isShift && !isEng) {
+      return 'rulowcode'
+    }
+  }
 };
