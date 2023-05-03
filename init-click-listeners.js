@@ -78,31 +78,31 @@ export function initClickListeners() {
     });
   }
 
-  // let pressed = new Set();
-  // const codes = ['ControlLeft', 'AltLeft'];
-  // let isEng = true;
+  let pressed = new Set();
+  const codes = ['ControlLeft', 'AltLeft'];
+  let isEng = true;
 
-  // document.addEventListener('keydown', function (event) {
-  //   pressed.add(event.code);
+  document.addEventListener('keydown', function (event) {
+    pressed.add(event.code);
 
-  //   for (let i = 0; i < codes.length; i++) {
-  //     if (!pressed.has(codes[i])) {
-  //       return;
-  //     }
-  //   }
-  //   pressed.clear();
+    for (let i = 0; i < codes.length; i++) {
+      if (!pressed.has(codes[i])) {
+        return;
+      }
+    }
+    pressed.clear();
 
-  //   for (let i = 0; i < keyboardKeys.length; i++) {
-  //     isEng = !isEng
-  //     const dataCode = keyboardKeys[i].dataset[isEng ? 'englowcode' : 'rucode'];
-  //     if (dataCode && !keyboardKeys[i].dataset.nonchanged) {
-  //       keyboardKeys[i].innerHTML = String.fromCharCode(dataCode);
-  //     }
-  //   };
-  // });
+    isEng = !isEng
+    for (let i = 0; i < keyboardKeys.length; i++) {
+      const dataCode = keyboardKeys[i].dataset[isEng ? 'englowcode' : 'rulowcode'];
+      if (dataCode && !keyboardKeys[i].dataset.nonchanged) {
+        keyboardKeys[i].innerHTML = String.fromCharCode(dataCode);
+      }
+    };
+  });
 
-  // document.addEventListener('keyup', function (event) {
-  //   pressed.delete(event.code);
-  // });
+  document.addEventListener('keyup', function (event) {
+    pressed.delete(event.code);
+  });
 
 };
