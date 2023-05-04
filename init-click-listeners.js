@@ -1,12 +1,48 @@
-export function initClickListeners() {
+let isCapsLock = false;
+let isShift = false;
+let isEng = true;
 
+function getCurrentCodeType() {
+  if (isCapsLock && !isShift && isEng) {
+    return 'engcapscode'
+  }
+
+  if (!isCapsLock && !isShift && isEng) {
+    return 'englowcode'
+  }
+
+  if (!isCapsLock && isShift && isEng) {
+    return 'shiftcode'
+  }
+
+  if (!isCapsLock && !isShift && !isEng) {
+    return 'rulowcode'
+  }
+
+  if (isCapsLock && !isShift && !isEng) {
+    return 'rucapscode'
+  }
+
+  if (!isCapsLock && isShift && !isEng) {
+    return 'rusiftcode'
+  }
+
+  if (isCapsLock && isShift && isEng) {
+    return 'englowcode'
+  }
+  if (isCapsLock && isShift && !isEng) {
+    return 'rulowcode'
+  }
+}
+
+export function initClickListeners() {
   const keyboardKeys = document.querySelectorAll('.keyboard__key');
   const textarea = document.querySelector('.keyboard__textarea');
 
-
   for (let i = 0; i < keyboardKeys.length; i++) {
     keyboardKeys[i].addEventListener('click', () => {
-      const dataCode = keyboardKeys[i].dataset.englowcode;
+      const codeAttribute = getCurrentCodeType();
+      const dataCode = keyboardKeys[i].dataset[codeAttribute];
       const cursorPosition = textarea.selectionStart;
 
       const strBeforeCursor = textarea.value.slice(0, cursorPosition);
@@ -45,7 +81,6 @@ export function initClickListeners() {
     textarea.selectionStart = cursorPosition;
   });
 
-  let isCapsLock = false;
 
   keyCapsock.addEventListener('click', () => {
     const capsock = document.querySelector('.capsock')
@@ -61,7 +96,6 @@ export function initClickListeners() {
   });
 
 
-  let isShift = false;
 
   for (let j = 0; j < keyShift.length; j++) {
     keyShift[j].addEventListener('click', () => {
@@ -82,7 +116,6 @@ export function initClickListeners() {
 
   let pressed = new Set();
   const codes = ['ControlLeft', 'AltLeft'];
-  let isEng = true;
 
   document.addEventListener('keydown', function (event) {
     pressed.add(event.code);
@@ -107,37 +140,4 @@ export function initClickListeners() {
   document.addEventListener('keyup', function (event) {
     pressed.delete(event.code);
   });
-
-  function getCurrentCodeType() {
-    if (isCapsLock && !isShift && isEng) {
-      return 'engcapscode'
-    }
-
-    if (!isCapsLock && !isShift && isEng) {
-      return 'englowcode'
-    }
-
-    if (!isCapsLock && isShift && isEng) {
-      return 'shiftcode'
-    }
-
-    if (!isCapsLock && !isShift && !isEng) {
-      return 'rulowcode'
-    }
-
-    if (isCapsLock && !isShift && !isEng) {
-      return 'rucapscode'
-    }
-
-    if (!isCapsLock && isShift && !isEng) {
-      return 'rusiftcode'
-    }
-
-    if (isCapsLock && isShift && isEng) {
-      return 'englowcode'
-    }
-    if (isCapsLock && isShift && !isEng) {
-      return 'rulowcode'
-    }
-  }
 };
